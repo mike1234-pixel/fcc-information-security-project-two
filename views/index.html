@@ -8,31 +8,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./public/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
   </head>
-  <body>
+  <body id="index-body">
     <header>
       <h1>
         ISQA_3 - Anon Message Board
       </h1>
     </header>
     <div id='userstories' style='margin-left: 5%; margin-top: 5%'>
-      <h3>User Stories</h3>
-      <ol>
-        <li class="completed">✓. Only allow your site to be loading in an iFrame on your own pages.</li>
-        <li class="completed">✓. Do not allow DNS prefetching.</li>
-        <li class="completed">✓. Only allow your site to send the referrer for your own pages.</li>
-        <li class="completed">✓. I can <b>POST</b> a thread to a specific message board by passing form data <code>text</code> and <code>delete_password</code> to <i>/api/threads/{board}</i>.(Recomend res.redirect to board page /b/{board})
+      <h3>About</h3>
+      <p>This message board is a Node.js project which uses Material Design Bootsrap for its front end elements.</p>
+      <p>You can add a new board. You can add new threads to each board, and new comments to each thread.</p>
+      <p>For each thread and reply posted you can set a password which will allow you to delete that thread or reply.</p>
+      <p>Scroll down to see the input boxes where you can perform various CRUD operations.</p>
+        <!--Trigger-->
+      <a class="btn btn-primary dropdown-toggle" type="button"    id="dropdownMenu" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">User Stories</a>
+      <div class="dropdown-menu dropdown-primary" id="user-stories">
+        <a class="dropdown-item">Only allow your site to be loading in an iFrame on your own pages.</a>
+        <a class="dropdown-item">Do not allow DNS prefetching.</a>
+        <a class="dropdown-item">Only allow your site to send the referrer for your own pages.</a>
+        <a class="dropdown-item">I can <b>POST</b> a thread to a specific message board by passing form data <code>text</code> and <code>delete_password</code> to <i>/api/threads/{board}</i>.(Recomend res.redirect to board page /b/{board})
         Saved will be <code>_id</code>, <code>text</code>, <code>created_on</code>(date&amp;time), <code>bumped_on</code>(date&amp;time, starts same as created_on), <code>reported</code>(boolean), <code>delete_password</code>, &amp; <code>replies</code>(array).</li>
-        <li class="completed">✓. I can <b>POST</b> a reply to a thread on a specific board by passing form data <code>text</code>, <code>delete_password</code>, &amp; <code>thread_id</code> to <i>/api/replies/{board}</i> and it will also update the bumped_on date to the comments date.(Recomend res.redirect to thread page /b/{board}/{thread_id})
-        In the thread's 'replies' array will be saved <code>_id</code>, <code>text</code>, <code>created_on</code>, <code>delete_password</code>, &amp; <code>reported</code>.</li>
-        <li class="completed">✓. I can <b>GET</b> an array of the most recent 10 bumped threads on the board with only the most recent 3 replies from <i>/api/threads/{board}</i>. The <code>reported</code> and <code>delete_passwords</code> fields will not be sent.</li>
-        <li class="completed">✓. I can <b>GET</b> an entire thread with all it's replies from <i>/api/replies/{board}?thread_id={thread_id}</i>. Also hiding the same fields.</li>
-        <li class="completed">✓. I can delete a thread completely if I send a <b>DELETE</b> request to <i>/api/threads/{board}</i> and pass along the <code>thread_id</code> &amp; <code>delete_password</code>. (Text response will be 'incorrect password' or 'success')</li>
-        <li class="completed">✓. I can delete a post(just changing the text to '[deleted]') if I send a <b>DELETE</b> request to <i>/api/replies/{board}</i> and pass along the <code>thread_id</code>, <code>reply_id</code>, &amp; <code>delete_password</code>. (Text response will be 'incorrect password' or 'success')</li>
-        <li class="completed">✓. I can report a thread and change it's reported value to true by sending a <b>PUT</b> request to <i>/api/threads/{board}</i> and pass along the <code>thread_id</code>. (Text response will be 'success')</li>
-        <li class="completed">✓. I can report a reply and change it's reported value to true by sending a <b>PUT</b> request to <i>/api/replies/{board}</i> and pass along the <code>thread_id</code> &amp; <code>reply_id</code>. (Text response will be 'success')</li>
-        <li>Complete functional tests that wholely test routes and pass.</li>
-      </ol>
+        <a class="dropdown-item">I can <b>POST</b> a reply to a thread on a specific board by passing form data <code>text</code>, <code>delete_password</code>, &amp; <code>thread_id</code> to <i>/api/replies/{board}</i> and it will also update the bumped_on date to the comments date.(Recomend res.redirect to thread page /b/{board}/{thread_id})
+        In the thread's 'replies' array will be saved <code>_id</code>, <code>text</code>, <code>created_on</code>, <code>delete_password</code>, &amp; <code>reported</code>.</a>
+        <a class="dropdown-item">I can <b>GET</b> an array of the most recent 10 bumped threads on the board with only the most recent 3 replies from <i>/api/threads/{board}</i>. The <code>reported</code> and <code>delete_passwords</code> fields will not be sent.</a>
+        <a class="dropdown-item">I can <b>GET</b> an entire thread with all it's replies from <i>/api/replies/{board}?thread_id={thread_id}</i>. Also hiding the same fields.</a>
+        <a class="dropdown-item">I can delete a thread completely if I send a <b>DELETE</b> request to <i>/api/threads/{board}</i> and pass along the <code>thread_id</code> &amp; <code>delete_password</code>. (Text response will be 'incorrect password' or 'success')</a>
+        <a class="dropdown-item">I can delete a post(just changing the text to '[deleted]') if I send a <b>DELETE</b> request to <i>/api/replies/{board}</i> and pass along the <code>thread_id</code>, <code>reply_id</code>, &amp; <code>delete_password</code>. (Text response will be 'incorrect password' or 'success')</a>
+        <a class="dropdown-item">I can report a thread and change it's reported value to true by sending a <b>PUT</b> request to <i>/api/threads/{board}</i> and pass along the <code>thread_id</code>. (Text response will be 'success')</a>
+        <a class="dropdown-item">I can report a reply and change it's reported value to true by sending a <b>PUT</b> request to <i>/api/replies/{board}</i> and pass along the <code>thread_id</code> &amp; <code>reply_id</code>. (Text response will be 'success')</a>
+        <a class="dropdown-item">Complete functional tests that wholely test routes and pass.</a>
+      </div>
       <img src='https://cdn.gomix.com/8f5547a1-a0d6-48f6-aa38-51753a0105f4%2FScreen%20Shot%202017-01-02%20at%201.04.10%20AM.png'>
       <br><br>
       <h2><a href='/b/general/'>Go to testing <i>'/b/general/'</i> board</a></h2>
@@ -42,53 +57,113 @@
       <h2 style="text-align: left">API Tests:</h2>
         <h4>New thread (POST /api/threads/:board)</h4>
         <form action="/api/threads/test" method="post" id="newThread">
-          <input type='text' placeholder='board' id='board1' name='board' required=''><br>
-          <textarea type='text' placeholder='Thread text...' name='text' required=''></textarea><br>
-          <input type='text' placeholder='password to delete' name='delete_password' required=''><br>
-          <input type="submit" value="Submit">
+        <div class="md-form">
+          <input type='text' id='homeform1_input1' name='board' required='' class="form-control">
+          <label for="homeform1_input1">Board</label>
+        </div>
+        <div class="md-form">
+          <textarea type='text' name='text' required='' class="md-textarea form-control" id='homeform1_input2'></textarea>
+          <label for'homeform1_input2'>Thread text...</label>
+        </div>
+        <div class="md-form">
+          <input type='text' id='homeform1_input3' name='delete_password' required='' class="form-control">
+          <label for="homeform1_input3">Password To Delete</label>
+        </div>
+          <br>
+          <input type="submit" value="Submit" class="btn btn-light">
         </form>
         <hr>
         <h4>Report thread (PUT /api/threads/:board)</h4>
         <form id="reportThread">
-          <input type='text' placeholder='board' id='board2' name='board' required=''><br>
-          <input type='text' placeholder='id to report' name='thread_id' required=''><br>
-          <input type="submit" value="Submit">
+          <div class="md-form">
+          <input type='text' id='homeform2_input1' name='board' required='' class="form-control"><br>
+          <label for="homeform2_input1">Board</label> 
+          </div>
+          <div class="md-form">   
+          <input type='text' id="homeform2_input2" name='thread_id' required='' class="form-control">
+          <label for="homeform2_input2">Id To Report</label> 
+          </div>
+          <br>
+          
+          <input type="submit" value="Submit" class="btn btn-light">
         </form>
         <hr>
         <h4>Delete thread (DELETE /api/threads/:board)</h4>
         <form id="deleteThread">
-          <input type='text' placeholder='board' id='board3' name='board' required=''><br>
-          <input type='text' placeholder='id to delete' name='thread_id' required=''><br>
-          <input type='text' placeholder='password' name='delete_password' required=''><br>
-          <input type="submit" value="Submit">
+        <div class="md-form">
+          <input type='text' id='homeform3_input1' name='board' required='' class="form-control">
+          <label for="homeform3_input1">Board</label>
+        </div>
+        <div class="md-form">
+          <input type='text' id='homeform3_input2' name='thread_id' required='' class="form-control">
+          <label for='homeform3_input2'>Id to Delete</label>
+        </div>
+        <div class="md-form">
+          <input type='text' id='homeform3_input3' name='delete_password' required='' class="form-control">
+          <label for='homeform3_input3'>Password</label>
+        </div>
+          <input type="submit" value="Submit" class="btn btn-light">
         </form>
         <hr>
         
         
         <h4>New reply (POST /api/replies/:board)</h4>
         <form action="/api/threads/test" method="post" id="newReply">
-          <input type='text' placeholder='board' id='board4' name='board' required=''><br>
-          <input type='text' placeholder='thread id' name='thread_id' required=''><br>
-          <textarea type='text' placeholder='Thread text...' name='text' required=''></textarea><br>
-          <input type='text' placeholder='password to delete' name='delete_password' required=''><br>
-          <input type="submit" value="Submit">
+        <div class="md-form">
+          <input type='text' id='homeform4_input1' name='board' required='' class="form-control">
+          <label for='homeform4_input1'>Board</label>
+        </div>
+        <div class="md-form">
+          <input type='text' id='homeform4_input2' name='thread_id' required='' class="form-control">
+          <label for="homeform4_input2">Thread Id</label>
+        </div>
+        <div class="md-form">
+          <textarea type='text' id='homeform4_input3' name='text' required='' class="md-textarea form-control"></textarea>
+          <label for="homeform4_input3">Thread Text...</label>
+        </div>
+        <div class="md-form">
+          <input type='text' id='homeform4_input4' name='delete_password' required='' class="form-control">
+          <label for="homeform4_input4">Password to delete</label>
+        </div>
+          <input type="submit" value="Submit" class="btn btn-light">
         </form>
         <hr>
         <h4>Report reply (PUT /api/replies/:board)</h4>
         <form id="reportReply">
-          <input type='text' placeholder='board' id='board5' name='board' required=''><br>
-          <input type='text' placeholder='thread id' name='thread_id' required=''><br>
-          <input type='text' placeholder='id to report' name='reply_id' required=''><br>
-          <input type="submit" value="Submit">
+          <div class="md-form">
+          <input type='text' id='homeform5_input1' name='board' required='' class="form-control">
+          <label for="homeform5_input1">Board</label>
+          </div>
+          <div class="md-form">
+          <input type='text' id='homeform5_input2' name='thread_id' required='' class="form-control">
+          <label for="homeform5_input2">Thread Id</label>
+          </div>
+          <div class="md-form">
+          <input type='text' id='homeform5_input3' name='reply_id' required='' class="form-control">
+          <label for="homeform5_input3">Id to Report</label>
+          </div>
+          <input type="submit" value="Submit" class="btn btn-light">
         </form>
         <hr>
         <h4>Delete reply (DELETE /api/replies/:board)</h4>
         <form id="deleteReply">
-          <input type='text' placeholder='board' id='board6' name='board' required=''><br>
-          <input type='text' placeholder='thread id' name='thread_id' required=''><br>
-          <input type='text' placeholder='id to delete' name='reply_id' required=''><br>
-          <input type='text' placeholder='password' name='delete_password' required=''><br>
-          <input type="submit" value="Submit">
+          <div class="md-form">
+          <input type='text' id='homeform6_input1' name='board' required='' class="form-control">
+          <label for="homeform6_input1">Board</label>
+          </div>
+          <div class="md-form">
+          <input type='text' id='homeform6_input2' name='thread_id' required='' class="form-control">
+          <label for="homeform6_input2">Thread Id</label>
+          </div>
+          <div class="md-form">
+          <input type='text' id='homeform6_input3' name='reply_id' required='' class="form-control">
+          <label for="homeform6_input3">Id to Delete</label>
+          </div>
+          <div class="md-form">
+          <input type='text' id='homeform6_input4' name='delete_password' required='' class="form-control">
+          <label for="homeform6_input4">Password</label>
+          </div>
+          <input type="submit" value="Submit" class="btn btn-light">
         </form>        
     </div>
     <hr style='margin: 50px; margin-top: 200px'>
@@ -160,5 +235,13 @@
         });
       });
    </script>
+   <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
   </body>
 </html>

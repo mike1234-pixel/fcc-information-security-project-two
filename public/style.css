@@ -9,6 +9,9 @@ body {
   font-family: arial;
 }
 
+#index-body, #board-body, #thread-body {
+  background-color: #EDDFEF;
+}
 
 .replies {
   margin-left: 50px;
@@ -25,15 +28,20 @@ body {
 }
 
 .thread {
-  border: 2px solid black;
-  padding: 5px;
+  padding: 15px;
   margin-bottom: 5px;
+  background-color: #efeedf;
 }
 
 .id {
   font-size: 10.5px;
 }
 
+#user-stories {
+  font-size: 10px;
+}
+
 #submitNewThread {
   margin: 50px;
 }
+
