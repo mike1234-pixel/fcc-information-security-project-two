@@ -2,11 +2,7 @@
 
 [![Run on Repl.it](https://repl.it/@MichaelTandy/Anonymous-Message-Board)](https://repl.it/@MichaelTandy/Anonymous-Message-Board)
 
-<!-- ![Alt text](./public/images/screenshot.jpg?raw=true "Title") -->
-
-<p text-align="center">
-  <img src="./public/images/screenshot.jpg" width="350" title="Anonymous Message Board Screenshot" alt="Anonymous Message Board Screenshot">
-</p>
+![screenshot](https://user-images.githubusercontent.com/57681651/98569152-d6977680-22a9-11eb-8346-7ae5ce55af45.JPG)
 
 # Project Anonymous Message Board
 
