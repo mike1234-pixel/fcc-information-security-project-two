@@ -305,9 +305,3 @@ module.exports = function (app) {
     })
   })  
 };
-
-
-// ways to improve the backend...
-// take into account all possibilities for error, sending the user an error message if a resource is not... go through all inputs on the frontend and test them. program needs to continue running regardless of user interaction.
-// write functional tests for /api/replies/:board requests
-// put the models in their own folder

@@ -2,6 +2,8 @@
 
 [![Run on Repl.it](https://repl.it/@MichaelTandy/Anonymous-Message-Board)](https://repl.it/@MichaelTandy/Anonymous-Message-Board)
 
+![Alt text](./public/images/screenshot.jpg?raw=true "Title")
+
 # Project Anonymous Message Board
 
 ## User Stories
