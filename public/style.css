@@ -7,10 +7,9 @@ body {
   padding: 10px;
   line-height: 20px;
   font-family: arial;
-}
-
-#index-body, #board-body, #thread-body {
-  background-color: #EDDFEF;
+  background-image: url("./images/mountains.jpg");
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .replies {
@@ -30,7 +29,10 @@ body {
 .thread {
   padding: 15px;
   margin-bottom: 5px;
-  background-color: #efeedf;
+  background-image: url("./images/mountains2.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .id {
@@ -45,3 +47,9 @@ body {
   margin: 50px;
 }
 
+@media (max-width: 700px) {
+  #dropdownMenu,
+  #userStoriesTable {
+    visibility: hidden;
+  }
+}
