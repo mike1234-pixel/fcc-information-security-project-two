@@ -51,5 +51,6 @@ body {
   #dropdownMenu,
   #userStoriesTable {
     visibility: hidden;
+    display: none;
   }
 }
